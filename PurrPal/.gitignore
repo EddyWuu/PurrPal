@@ -5,12 +5,9 @@
 *.xcuserstate
 xcuserdata/
 DerivedData/
-*.xcworkspace/
+*.xcworkspace
 !default.xcworkspace
-project.xcworkspace/
-*.xcodeproj/*.pbxproj
-*.xcodeproj/*.xcworkspace/
-*.xcodeproj/project.xcworkspace/
+*.xcodeproj/*
 IDEWorkspaceChecks.plist
 
 # Build products
