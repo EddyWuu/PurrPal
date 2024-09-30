@@ -14,7 +14,7 @@ class CatImageService {
     func fetchTenRandomCatImage(completion: @escaping (Result<[CatImage], Error>) -> Void) {
         let urlString = "https://api.thecatapi.com/v1/images/search?limit=10"
         guard let url = URL(string: urlString) else {
-            print("Invalid URL") // Print invalid URL
+            print("Invalid URL")
             return
         }
 
@@ -23,13 +23,14 @@ class CatImageService {
 
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
-                print("Error fetching images: \(error)") // Print network error
+                // network error
+                print("Error fetching images: \(error)")
                 completion(.failure(error))
                 return
             }
 
             guard let data = data else {
-                print("No data received") // Print data error
+                print("No data received")
                 completion(.failure(NSError(domain: "No data", code: -1, userInfo: nil)))
                 return
             }
@@ -38,7 +39,7 @@ class CatImageService {
                 let images = try JSONDecoder().decode([CatImage].self, from: data)
                 completion(.success(images))
             } catch {
-                print("Error decoding JSON: \(error)") // Print decoding error
+                print("Error decoding JSON: \(error)")
                 completion(.failure(error))
             }
         }.resume()
