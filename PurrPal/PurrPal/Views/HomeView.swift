@@ -17,7 +17,7 @@ struct HomeView: View {
                     ProgressView("Loading cat images...")
                         .frame(height: 300)
                 } else {
-                    // Carousel for cat images
+                    // carousel for cat images
                     TabView(selection: $viewModel.currentIndex) {
                         ForEach(0..<viewModel.catImages.count, id: \.self) { index in
                             if let url = URL(string: viewModel.catImages[index].url) {
@@ -25,27 +25,36 @@ struct HomeView: View {
                                     image
                                         .resizable()
                                         .scaledToFill()
-                                        .frame(width: UIScreen.main.bounds.width, height: 300)
+                                        .frame(width: UIScreen.main.bounds.width - 40, height: 250)
                                         .clipped()
+                                        .padding()
+                                        .background(Color.brown.opacity(0.2))
+                                        .cornerRadius(20)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 20)
+                                                .stroke(Color.brown, lineWidth: 4)
+                                        )
                                 } placeholder: {
                                     ProgressView()
-                                        .frame(width: UIScreen.main.bounds.width, height: 300)
+                                        .frame(width: UIScreen.main.bounds.width - 40, height: 250)
+                                        .background(Color.brown.opacity(0.2))
+                                        .cornerRadius(20)
                                 }
                             }
                         }
                     }
                     .frame(height: 300)
-                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never)) // Hide default dots
+                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
 
-                    // custom pagination dots
+                    // custom dots
                     HStack(spacing: 8) {
                         ForEach(0..<viewModel.catImages.count, id: \.self) { index in
-                            if viewModel.isDotVisible(for: index) { // Show only visible dots
+                            if viewModel.isDotVisible(for: index) {
                                 Circle()
                                     .fill(index == viewModel.currentIndex ? Color.blue : Color.gray)
                                     .frame(width: 5, height: 5)
-                                    .opacity(viewModel.dotOpacity(for: index)) // Set the opacity based on distance
-                                    .animation(.easeInOut, value: viewModel.currentIndex)
+                                    .opacity(viewModel.dotOpacity(for: index))
+                                    .animation(.linear, value: viewModel.currentIndex)
                             }
                         }
                     }
