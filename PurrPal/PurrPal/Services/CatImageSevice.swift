@@ -9,6 +9,7 @@ import Foundation
 
 class CatImageService {
 
+    // the cat api
     let apiKey = "live_ibEHalO6bRqoSwH2ho8g8h3xBRaOp55OiLJPrWeIh0K5gJtjGVX2WpzNJclOnOMX"
 
     func fetchTenRandomCatImage(completion: @escaping (Result<[CatImage], Error>) -> Void) {

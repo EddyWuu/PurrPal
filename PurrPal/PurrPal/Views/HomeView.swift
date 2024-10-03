@@ -19,6 +19,8 @@ struct HomeView: View {
                     Text("Daily Dose of Dopamine")
                         .font(.headline)
                         .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.brown.opacity(0.2)) 
                     
                     // cat carousel
                     if viewModel.catImages.isEmpty {
