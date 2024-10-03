@@ -10,6 +10,13 @@ import SwiftUI
 struct GuideView: View {
     
     var body: some View {
-        Text("GuideView")
+        NavigationView {
+            ScrollView {
+
+                Text("guide")
+            }
+            .navigationTitle("Guide")
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
