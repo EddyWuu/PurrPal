@@ -10,6 +10,13 @@ import SwiftUI
 struct EncyclopediaView: View {
     
     var body: some View {
-        Text(" encyclopediaView")
+        NavigationView {
+            ScrollView {
+
+                Text("info")
+            }
+            .navigationTitle("Encyclopedia")
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }

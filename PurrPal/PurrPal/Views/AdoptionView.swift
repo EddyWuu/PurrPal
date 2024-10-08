@@ -9,6 +9,13 @@ import SwiftUI
 
 struct AdoptionView: View {
     var body: some View {
-        Text("AdoptionView")
+        NavigationView {
+            ScrollView {
+
+                Text("adopt")
+            }
+            .navigationTitle("Adoptions")
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }

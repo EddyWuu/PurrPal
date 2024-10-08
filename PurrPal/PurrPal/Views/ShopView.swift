@@ -9,6 +9,13 @@ import SwiftUI
 
 struct ShopView: View {
     var body: some View {
-        Text("ShopView")
+        NavigationView {
+            ScrollView {
+
+                Text("shop")
+            }
+            .navigationTitle("Shop")
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
