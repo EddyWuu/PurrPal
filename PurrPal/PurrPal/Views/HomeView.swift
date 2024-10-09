@@ -26,6 +26,7 @@ struct HomeView: View {
                     if viewModel.catImages.isEmpty {
                         ProgressView("Loading cat images...")
                             .frame(height: 300)
+                            .padding()
                     } else {
                         // carousel for cat images
                         TabView(selection: $viewModel.currentIndex) {
@@ -35,7 +36,7 @@ struct HomeView: View {
                                         image
                                             .resizable()
                                             .scaledToFill()
-                                            .frame(width: UIScreen.main.bounds.width - 40, height: 250)
+                                            .frame(width: UIScreen.main.bounds.width - 70, height: 250)
                                             .clipped()
                                             .padding()
                                             .background(Color.brown.opacity(0.2))
@@ -49,12 +50,14 @@ struct HomeView: View {
                                             .frame(width: UIScreen.main.bounds.width - 40, height: 250)
                                             .background(Color.brown.opacity(0.2))
                                             .cornerRadius(20)
+                                            .padding()
                                     }
                                 }
                             }
                         }
                         .frame(height: 300)
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                        .padding()
                         
                         // custom dots
                         HStack(spacing: 8) {
@@ -70,6 +73,22 @@ struct HomeView: View {
                         }
                         .padding(.top, -28)
                     }
+                    
+                    // second section, recent cats up for adoptions
+                    Text("Recent Cats Up For Adoption")
+                        .font(.headline)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.brown.opacity(0.2))
+                    
+                    // no api key yet
+                    Text("To be added")
+                        .font(.subheadline)
+                        .foregroundColor(.black)
+                        .frame(maxWidth: .infinity, minHeight: 150)
+                        .background(Color.brown.opacity(0.2))
+                        .cornerRadius(20)
+                        .padding()
                 }
                 .navigationTitle("Home")
                 .navigationBarTitleDisplayMode(.inline)
