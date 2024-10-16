@@ -9,7 +9,7 @@ import Foundation
 
 class CatImageService {
 
-    // the cat api
+    // the cat api, this api key is revoked, only to be used as test before, and will be replaced more securely in server
     let apiKey = "live_ibEHalO6bRqoSwH2ho8g8h3xBRaOp55OiLJPrWeIh0K5gJtjGVX2WpzNJclOnOMX"
 
     func fetchTenRandomCatImage(completion: @escaping (Result<[CatImage], Error>) -> Void) {
