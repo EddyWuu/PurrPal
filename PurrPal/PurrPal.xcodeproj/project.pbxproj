@@ -15,6 +15,7 @@
 		ADD5D7982CC06FDA00A11146 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = ADD5D7972CC06FDA00A11146 /* FirebaseFirestore */; };
 		ADD5D79A2CC06FDA00A11146 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = ADD5D7992CC06FDA00A11146 /* FirebaseFunctions */; };
 		ADD5D79C2CC06FDA00A11146 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = ADD5D79B2CC06FDA00A11146 /* FirebaseStorage */; };
+		ADF969D72CC0882D009153C4 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = ADF969D62CC0882D009153C4 /* FirebaseRemoteConfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 				ADD5D7942CC06FDA00A11146 /* FirebaseAnalytics in Frameworks */,
 				ADD5D7962CC06FDA00A11146 /* FirebaseAuth in Frameworks */,
 				ADD5D7982CC06FDA00A11146 /* FirebaseFirestore in Frameworks */,
+				ADF969D72CC0882D009153C4 /* FirebaseRemoteConfig in Frameworks */,
 				ADD5D79C2CC06FDA00A11146 /* FirebaseStorage in Frameworks */,
 				ADD5D79A2CC06FDA00A11146 /* FirebaseFunctions in Frameworks */,
 			);
@@ -97,6 +99,7 @@
 				ADD5D7482CAA067F00A11146 /* PurrPalUITests */,
 				ADD5D72C2CAA067E00A11146 /* Products */,
 				ADD5D78E2CC06E8700A11146 /* GoogleService-Info.plist */,
+				ADF969D52CC0882D009153C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +111,13 @@
 				ADD5D7452CAA067F00A11146 /* PurrPalUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		ADF969D52CC0882D009153C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +145,7 @@
 				ADD5D7972CC06FDA00A11146 /* FirebaseFirestore */,
 				ADD5D7992CC06FDA00A11146 /* FirebaseFunctions */,
 				ADD5D79B2CC06FDA00A11146 /* FirebaseStorage */,
+				ADF969D62CC0882D009153C4 /* FirebaseRemoteConfig */,
 			);
 			productName = PurrPal;
 			productReference = ADD5D72B2CAA067E00A11146 /* PurrPal.app */;
@@ -624,6 +635,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = ADD5D7922CC06FDA00A11146 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		ADF969D62CC0882D009153C4 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ADD5D7922CC06FDA00A11146 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
