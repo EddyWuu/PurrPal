@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ADD5D78F2CC06E8700A11146 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADD5D78E2CC06E8700A11146 /* GoogleService-Info.plist */; };
-		ADD5D7902CC06E8700A11146 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADD5D78E2CC06E8700A11146 /* GoogleService-Info.plist */; };
-		ADD5D7912CC06E8700A11146 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADD5D78E2CC06E8700A11146 /* GoogleService-Info.plist */; };
 		ADD5D7942CC06FDA00A11146 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = ADD5D7932CC06FDA00A11146 /* FirebaseAnalytics */; };
 		ADD5D7962CC06FDA00A11146 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ADD5D7952CC06FDA00A11146 /* FirebaseAuth */; };
 		ADD5D7982CC06FDA00A11146 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = ADD5D7972CC06FDA00A11146 /* FirebaseFirestore */; };
@@ -39,12 +36,32 @@
 		ADD5D72B2CAA067E00A11146 /* PurrPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PurrPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD5D73B2CAA067F00A11146 /* PurrPalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurrPalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD5D7452CAA067F00A11146 /* PurrPalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurrPalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADD5D78E2CC06E8700A11146 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		ADF96A0D2CC5B3DF009153C4 /* Exceptions for "PurrPal" folder in "PurrPalTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"GoogleService-Info.plist",
+			);
+			target = ADD5D73A2CAA067F00A11146 /* PurrPalTests */;
+		};
+		ADF96A0E2CC5B3DF009153C4 /* Exceptions for "PurrPal" folder in "PurrPalUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"GoogleService-Info.plist",
+			);
+			target = ADD5D7442CAA067F00A11146 /* PurrPalUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		ADD5D72D2CAA067E00A11146 /* PurrPal */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				ADF96A0D2CC5B3DF009153C4 /* Exceptions for "PurrPal" folder in "PurrPalTests" target */,
+				ADF96A0E2CC5B3DF009153C4 /* Exceptions for "PurrPal" folder in "PurrPalUITests" target */,
+			);
 			path = PurrPal;
 			sourceTree = "<group>";
 		};
@@ -98,7 +115,6 @@
 				ADD5D73E2CAA067F00A11146 /* PurrPalTests */,
 				ADD5D7482CAA067F00A11146 /* PurrPalUITests */,
 				ADD5D72C2CAA067E00A11146 /* Products */,
-				ADD5D78E2CC06E8700A11146 /* GoogleService-Info.plist */,
 				ADF969D52CC0882D009153C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -249,7 +265,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADD5D78F2CC06E8700A11146 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +272,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADD5D7912CC06E8700A11146 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +279,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADD5D7902CC06E8700A11146 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

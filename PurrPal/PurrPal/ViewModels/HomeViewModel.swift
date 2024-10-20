@@ -16,9 +16,17 @@ class HomeViewModel: ObservableObject {
     
     private let catImageService = CatImageService()
 
-    // initializer, start every function when HomeViewModel is called
+    // initializer, start fetching images after API key is ready
     init() {
-        fetchTenRandomCatImages()
+        
+        // wait for the API key to be ready before fetching images
+        catImageService.fetchTheCatApiKey { success in
+            if success {
+                self.fetchTenRandomCatImages()
+            } else {
+                print("Error fetching API key")
+            }
+        }
     }
     
     func fetchTenRandomCatImages() {
@@ -28,8 +36,9 @@ class HomeViewModel: ObservableObject {
             case .success(let catImages):
                 // store cat images, do this on main thread
                 DispatchQueue.main.async {
-                    self.catImages = catImages 
+                    self.catImages = catImages
                 }
+                
             case .failure(let error):
                 // print error given error
                 print("Error fetching cat images: \(error)")
