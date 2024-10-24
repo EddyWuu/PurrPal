@@ -7,23 +7,57 @@
 
 import SwiftUI
 
+// class to manage tab views
+class NavigationManager: ObservableObject {
+    
+    @Published var selectedTab: Tab = .home
+    
+    enum Tab {
+        case home
+        case encyclopedia
+        case adoption
+        case shop
+        case guide
+    }
+}
+
+
 struct ContentView: View {
+    
+    @StateObject var navigationManager = NavigationManager()
+    
     var body: some View {
-        TabView {
+        
+        TabView(selection: $navigationManager.selectedTab) {
             HomeView()
-                .tabItem { Image(systemName: "house") }
+                .tag(NavigationManager.Tab.home)
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
             
             EncyclopediaView()
-                .tabItem { Image(systemName: "book") }
+                .tag(NavigationManager.Tab.encyclopedia)
+                .tabItem {
+                    Label("Encyclopedia", systemImage: "book")
+                }
             
             AdoptionView()
-                .tabItem { Image(systemName: "pawprint") }
+                .tag(NavigationManager.Tab.adoption)
+                .tabItem {
+                    Label("Adoption", systemImage: "pawprint")
+                }
             
             ShopView()
-                .tabItem { Image(systemName: "cart") }
+                .tag(NavigationManager.Tab.shop)
+                .tabItem {
+                    Label("Shop", systemImage: "cart")
+                }
         
             GuideView()
-                .tabItem { Image(systemName: "lightbulb") }
+                .tag(NavigationManager.Tab.guide)
+                .tabItem {
+                    Label("Guide", systemImage: "lightbulb")
+                }
         }
     }
 }

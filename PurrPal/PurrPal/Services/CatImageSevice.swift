@@ -58,7 +58,7 @@ class CatImageService {
                 
                 let apiKey = remoteConfig.configValue(forKey: "TheCatAPIKey").stringValue
                 
-                // check the api key
+                // check the api key and set
                 if !apiKey.isEmpty {
                     print("API Key fetched")
                     self.theCatApiKey = apiKey

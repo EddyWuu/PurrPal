@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct AdoptionView: View {
+    
     var body: some View {
+        
         NavigationView {
             ScrollView {
 
