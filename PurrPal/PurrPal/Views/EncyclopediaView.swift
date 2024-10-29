@@ -13,8 +13,9 @@ struct EncyclopediaView: View {
         
         NavigationView {
             ScrollView {
+                
                 NavigationLink(destination: CatBreedsView()) {
-                    Text("Cat Breeds")
+                    Text("Breeds")
                         .font(.headline)
                         .foregroundColor(.black)
                         .padding()
@@ -23,6 +24,62 @@ struct EncyclopediaView: View {
                         .cornerRadius(10)
                 }
                 .padding()
+                
+                NavigationLink(destination: CatBreedsView()) {
+                    Text("Health and Nutrition")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.brown.opacity(0.2))
+                        .cornerRadius(10)
+                }
+                .padding()
+                
+                NavigationLink(destination: CatBreedsView()) {
+                    Text("Behaviour")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.brown.opacity(0.2))
+                        .cornerRadius(10)
+                }
+                .padding()
+                
+                NavigationLink(destination: CatBreedsView()) {
+                    Text("Historical Significance")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.brown.opacity(0.2))
+                        .cornerRadius(10)
+                }
+                .padding()
+                
+                NavigationLink(destination: CatBreedsView()) {
+                    Text("Stories")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.brown.opacity(0.2))
+                        .cornerRadius(10)
+                }
+                .padding()
+                
+                NavigationLink(destination: CatBreedsView()) {
+                    Text("Cat Anatomy")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.brown.opacity(0.2))
+                        .cornerRadius(10)
+                }
+                .padding()
+                
             }
             .navigationTitle("Encyclopedia")
             .navigationBarTitleDisplayMode(.inline)
