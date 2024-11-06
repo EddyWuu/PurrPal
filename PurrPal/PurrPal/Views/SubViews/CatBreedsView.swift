@@ -9,25 +9,16 @@ import SwiftUI
 
 struct CatBreedsView: View {
     
-    let catBreeds = ["siamese", "bengal", "maine coon", "turkish angora", "turkish van", "ragdoll", "birman", "sphynx", "munchkin", "burmese"]
+    @StateObject var catBreedInfoService: CatBreedInfoService
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
         
         ScrollView {
-            
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
-                ForEach(catBreeds, id: \.self) { breed in
-                    Button(action: {
-                        // breed info
-                    }) {
-                        Text(breed)
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .frame(width: 170, height: 140)
-                            .background(Color.brown.opacity(0.5))
-                            .cornerRadius(10)
-
+                ForEach(catBreedInfoService.catBreeds) { breed in
+                    NavigationLink(destination: CatBreedsDetailView(catBreed: breed)) {
+                        CatBreedCardView(breed: breed)
                     }
                 }
             }
@@ -49,3 +40,19 @@ struct CatBreedsView: View {
     }
 }
 
+struct CatBreedCardView: View {
+    let breed: CatBreed
+    
+    var body: some View {
+        VStack {
+            Text(breed.name)
+                .font(.headline)
+                .foregroundColor(.white)
+                .padding()
+                .frame(width: 170, height: 140)
+                .background(Color.brown.opacity(0.5))
+                .cornerRadius(10)
+                .shadow(radius: 5)
+        }
+    }
+}

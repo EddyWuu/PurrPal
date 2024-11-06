@@ -247,6 +247,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				ADD5D7922CC06FDA00A11146 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				AD401BA72CDAF0E3006C6AAC /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = ADD5D72C2CAA067E00A11146 /* Products */;
@@ -613,6 +614,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AD401BA72CDAF0E3006C6AAC /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.4;
+			};
+		};
 		ADD5D7922CC06FDA00A11146 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
