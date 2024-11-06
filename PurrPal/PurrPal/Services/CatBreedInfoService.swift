@@ -8,28 +8,19 @@
 import SwiftUI
 import FirebaseFirestore
 
-class CatBreedInfoService: ObservableObject {
-    @Published var catBreeds: [CatBreed] = []
+class CatBreedInfoService {
+    private let db = Firestore.firestore()
     
-    private var db = Firestore.firestore()
-    
-    init() {
-        fetchCatBreeds()
-    }
-    
-    func fetchCatBreeds() {
-        db.collection("CatBreeds").getDocuments { (snapshot, error) in
-            if let error = error {
-                print("Error fetching cat breeds: \(error)")
-                return
-            }
-            
-            if let snapshot = snapshot {
-                print("Successfully fetched cat breeds")
-                self.catBreeds = snapshot.documents.compactMap { document in
-                    try? document.data(as: CatBreed.self)
-                }
-            }
+    func fetchCatBreeds() async throws -> [CatBreed] {
+        
+        // async retrieve all documents in CatBreeds colleciton
+        let snapshot = try await db.collection("CatBreeds").getDocuments()
+        
+        // map to my model catbreeds
+        let breeds = try snapshot.documents.compactMap { document in
+            try document.data(as: CatBreed.self)
         }
+        
+        return breeds
     }
 }

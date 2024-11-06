@@ -9,14 +9,14 @@ import SwiftUI
 
 struct CatBreedsView: View {
     
-    @StateObject var catBreedInfoService: CatBreedInfoService
+    @StateObject private var viewModel: CatBreedsViewModel = CatBreedsViewModel(catBreedInfoService: CatBreedInfoService())
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
         
         ScrollView {
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
-                ForEach(catBreedInfoService.catBreeds) { breed in
+                ForEach(viewModel.catBreeds) { breed in
                     NavigationLink(destination: CatBreedsDetailView(catBreed: breed)) {
                         CatBreedCardView(breed: breed)
                     }
@@ -37,10 +37,17 @@ struct CatBreedsView: View {
                 }
             }
         }
+        .onAppear {
+            Task {
+                await viewModel.fetchCatBreeds()
+            }
+        }
     }
 }
 
+
 struct CatBreedCardView: View {
+    
     let breed: CatBreed
     
     var body: some View {
@@ -52,7 +59,6 @@ struct CatBreedCardView: View {
                 .frame(width: 170, height: 140)
                 .background(Color.brown.opacity(0.5))
                 .cornerRadius(10)
-                .shadow(radius: 5)
         }
     }
 }

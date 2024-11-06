@@ -9,15 +9,12 @@ import SwiftUI
 
 struct EncyclopediaView: View {
     
-    // an instance of CatBreedInfoService, created once and reused
-    private let catBreedInfoService = CatBreedInfoService()
-    
     var body: some View {
         
         NavigationView {
             ScrollView {
                 
-                NavigationLink(destination: CatBreedsView(catBreedInfoService: CatBreedInfoService())) {
+                NavigationLink(destination: CatBreedsView()) {
                     Text("Breeds")
                         .font(.headline)
                         .foregroundColor(.black)
