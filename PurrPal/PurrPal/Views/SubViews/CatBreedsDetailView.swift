@@ -13,7 +13,16 @@ struct CatBreedsDetailView: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
+        
         VStack(alignment: .leading, spacing: 16) {
+            
+            Image(catBreed.imageName)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200, height: 200, alignment: .center)
+                        .cornerRadius(10)
+                        .shadow(radius: 5)
+            
             Text(catBreed.name)
                 .font(.largeTitle)
                 .fontWeight(.bold)
@@ -29,7 +38,7 @@ struct CatBreedsDetailView: View {
             Spacer()
         }
         .padding()
-        .navigationTitle(catBreed.name)
+        .navigationTitle("Breed Details")
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
