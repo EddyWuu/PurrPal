@@ -10,10 +10,10 @@ import Foundation
 struct CatBreed: Identifiable, Codable {
     let id: String
     let name: String
-//    let origin: String
+    let origin: String
 //    let description: String
     let temperament: String
-//    let lifeSpan: String
+    let lifespan: String
     let imageName: String
 //    let careTips: String
 //    let history: String

@@ -52,6 +52,41 @@ struct CatBreedsDetailView: View {
                 .shadow(radius: 5)
                 .padding(.horizontal)
                 
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("origin")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .padding(.bottom, 5)
+                    
+                    Text(catBreed.origin)
+                        .font(.body)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.leading)
+                }
+                .padding()
+                .background(Color.white)
+                .cornerRadius(10)
+                .shadow(radius: 5)
+                .padding(.horizontal)
+                
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Life Span")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .padding(.bottom, 5)
+                    
+                    Text("\(catBreed.lifespan) years")
+                        .font(.body)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.leading)
+                }
+                .padding()
+                .background(Color.white)
+                .cornerRadius(10)
+                .shadow(radius: 5)
+                .padding(.horizontal)
+                
+                
                 Spacer()
             }
             .padding()
