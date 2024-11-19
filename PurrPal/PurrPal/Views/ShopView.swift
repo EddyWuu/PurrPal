@@ -15,6 +15,7 @@ struct ShopView: View {
             ScrollView {
 
                 Text("shop")
+                Text("currently working to get amazon associates account")
             }
             .navigationTitle("Shop")
             .navigationBarTitleDisplayMode(.inline)
