@@ -8,12 +8,11 @@
 import Foundation
 
 struct CatForAdoption: Identifiable, Codable {
-    let id: Int
+
+    let id: String
     let name: String
     let breed: String
     let age: String
-    let gender: String
-    let description: String
     let location: String
-    let imageUrl: String
+    let photo: String?
 }
