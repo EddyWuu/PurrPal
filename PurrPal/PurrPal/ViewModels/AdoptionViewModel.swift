@@ -76,8 +76,10 @@ class AdoptionViewModel: ObservableObject {
 //        }.resume()
 //    }
     
+    // call for this func when vm loaded
     init() {
-         fetchDummyAdoptions()
+        fetchDummyAdoptions()
+//        fetchAdoptions()
      }
 
      func fetchDummyAdoptions() {

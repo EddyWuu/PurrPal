@@ -14,7 +14,8 @@ struct AdoptionView: View {
     var body: some View {
         NavigationView {
             VStack {
-                // Add Search Bar
+                
+                // using my search bar component
                 SearchBar(text: $searchText)
                     .padding()
 
