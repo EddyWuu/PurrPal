@@ -13,7 +13,7 @@ struct AdoptionView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(alignment: .leading) {
                 
                 // using my search bar component
                 SearchBar(text: $searchText)
@@ -27,9 +27,10 @@ struct AdoptionView: View {
                             .foregroundColor(.red)
                             .padding()
                     } else {
-                        LazyVStack(spacing: 16) {
+                        LazyVStack(alignment: .leading, spacing: 16) {
                             ForEach(viewModel.filteredAdoptions(searchText: searchText)) { adoption in
                                 AdoptionCardView(adoption: adoption)
+                                    .frame(maxWidth: .infinity)
                             }
                         }
                         .padding()
@@ -93,7 +94,7 @@ struct AdoptionCardView: View {
             } else {
                 Rectangle()
                     .fill(Color.gray)
-                    .frame(height: 200)
+                    .frame(maxWidth: .infinity, maxHeight: 200)
                     .overlay(Text("No Image").foregroundColor(.white))
             }
 
@@ -109,6 +110,7 @@ struct AdoptionCardView: View {
             }
             .padding()
         }
+        .frame(maxWidth: .infinity)
         .background(Color(.systemBackground))
         .cornerRadius(10)
         .shadow(radius: 5)
