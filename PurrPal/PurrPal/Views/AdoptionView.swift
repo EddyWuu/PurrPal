@@ -44,6 +44,7 @@ struct AdoptionView: View {
 }
 
 struct SearchBar: View {
+    
     @Binding var text: String
 
     var body: some View {
@@ -77,7 +78,9 @@ struct SearchBar: View {
 }
 
 struct AdoptionCardView: View {
+    
     let adoption: CatForAdoption
+    @State private var showDetails = false
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -107,6 +110,18 @@ struct AdoptionCardView: View {
                     .font(.subheadline)
                 Text("Location: \(adoption.location)")
                     .font(.subheadline)
+                
+                Button(action: {
+                    showDetails = true
+                }) {
+                    Text("View Details")
+                        .font(.subheadline)
+                        .foregroundColor(.blue)
+                        .padding(.top, 8)
+                }
+                .sheet(isPresented: $showDetails) {
+                    AdoptionDetailsView(adoption: adoption)
+                }
             }
             .padding()
         }
@@ -116,5 +131,3 @@ struct AdoptionCardView: View {
         .shadow(radius: 5)
     }
 }
-
-

@@ -15,4 +15,5 @@ struct CatForAdoption: Identifiable, Codable {
     let age: String
     let location: String
     let photo: String?
+    // description
 }
