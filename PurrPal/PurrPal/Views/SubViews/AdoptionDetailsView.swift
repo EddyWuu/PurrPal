@@ -21,7 +21,7 @@ struct AdoptionDetailsView: View {
                         .frame(height: 300)
                         .clipped()
                 } placeholder: {
-                    ProgressView()
+
                 }
             } else {
                 Rectangle()
@@ -56,7 +56,7 @@ struct AdoptionDetailsView: View {
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .background(Color.green)
+                    .background(Color.brown)
                     .cornerRadius(10)
             }
             .padding(.horizontal)

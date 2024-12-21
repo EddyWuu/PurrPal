@@ -92,7 +92,7 @@ struct AdoptionCardView: View {
                         .frame(height: 200)
                         .clipped()
                 } placeholder: {
-                    ProgressView()
+                    
                 }
             } else {
                 Rectangle()

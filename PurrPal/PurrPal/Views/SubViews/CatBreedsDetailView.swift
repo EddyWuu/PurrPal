@@ -47,6 +47,7 @@ struct CatBreedsDetailView: View {
                         .multilineTextAlignment(.leading)
                 }
                 .padding()
+                .frame(maxWidth: .infinity)
                 .background(Color.white)
                 .cornerRadius(10)
                 .shadow(radius: 5)
@@ -64,6 +65,7 @@ struct CatBreedsDetailView: View {
                         .multilineTextAlignment(.leading)
                 }
                 .padding()
+                .frame(maxWidth: .infinity)
                 .background(Color.white)
                 .cornerRadius(10)
                 .shadow(radius: 5)
@@ -81,6 +83,7 @@ struct CatBreedsDetailView: View {
                         .multilineTextAlignment(.leading)
                 }
                 .padding()
+                .frame(maxWidth: .infinity)
                 .background(Color.white)
                 .cornerRadius(10)
                 .shadow(radius: 5)
