@@ -25,16 +25,16 @@ struct EncyclopediaView: View {
                 }
                 .padding()
                 
-//                NavigationLink(destination: CatBreedsView()) {
-//                    Text("Health and Nutrition")
-//                        .font(.headline)
-//                        .foregroundColor(.black)
-//                        .padding()
-//                        .frame(maxWidth: .infinity)
-//                        .background(Color.brown.opacity(0.2))
-//                        .cornerRadius(10)
-//                }
-//                .padding()
+                NavigationLink(destination: HealthView()) {
+                    Text("Health and Nutrition")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.brown.opacity(0.2))
+                        .cornerRadius(10)
+                }
+                .padding()
 //                
 //                NavigationLink(destination: CatBreedsView()) {
 //                    Text("Behaviour")
